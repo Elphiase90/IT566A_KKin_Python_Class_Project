@@ -1,2 +1,2 @@
 # IT566A_KKin_Python_Class_Project
-Class Projects for IT-566 B Kaci Kinchloe
+Class Projects for IT-566 B
