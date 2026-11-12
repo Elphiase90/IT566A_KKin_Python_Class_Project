@@ -77,9 +77,40 @@ elif choice == "3":
     for date in [start, end]:
       if date:
         date.time.strptime(date, "%Y-%m-%d")
-except ValueError:
-  print("Invalid date format.")
-  continue
+  except ValueError:
+    print("Invalid date format.")
+    continue
+
+  if start and end and start > end:
+    print("Start date must be before end date.")
+    continue
+
+  results = filter_expenses(expenses, start, end, category)
+
+  if not results:
+    print("No matching expenses found.")
+  else: 
+    for expenses in results:
+      print(expense)
+
+elif choice == "5":
+  new_filename = input("Enter json filename: ")
+
+  try:
+    new_expenses = load_expenses(new_filename)
+    expenses = new_expenses
+    filename = new_filename
+    print("Expense file opened!")
+except (ValueError, OSError):
+  print("Could not open that file!")
+
+elif choice == "6":
+  print("Goodbye!")
+  break
+
+else:
+  print("Invalid choice. Try again")
+
 
 
     
