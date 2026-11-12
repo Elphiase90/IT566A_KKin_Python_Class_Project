@@ -96,7 +96,7 @@ while True:
       for expenses in results:
         print(expense)
 
-elif choice == "4"
+  elif choice == "4":
     csv_filename = input("Enter csv filename (example: expensetracker.csv): ")
 
     if not csv_filename:
@@ -104,7 +104,7 @@ elif choice == "4"
       
     export_csv(csv_filename, expenses)
 
-elif choice == "5":
+  elif choice == "5":
     new_filename = input("Enter json filename: ")
 
     try:
@@ -114,7 +114,7 @@ elif choice == "5":
       print("Expense file opened!")
 
     except (ValueError, OSError):
-    print("Could not open that file!")
+      print("Could not open that file!")
 
   elif choice == "6":
     print("Goodbye!")
