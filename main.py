@@ -15,5 +15,16 @@ except (ValueError, OSError):
   print("Could not open the expense tracker file.")
   expenses = []
   filename = "expensetracker.json"
+
+while True:
+  print("\n--- Expense Tracker ---")
+  print("1. Add Expense")
+  print("2. View All Expenses")
+  print("3. Filter Expenses")
+  print("4. Export to CSV")
+  print("5. Open Another Expense File")
+  print("6. Exit")
+
+  choice = input (
   
 
