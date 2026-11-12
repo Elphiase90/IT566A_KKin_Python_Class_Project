@@ -25,6 +25,17 @@ while True:
   print("5. Open Another Expense File")
   print("6. Exit")
 
-  choice = input (
+  choice = input ("Choose an option: ")
+
+if choice == "1":
+  date = input(Enter date (YYYY-MM-DD): ")
+
+  try:
+    datetime.strptime(date, "%Y-%M-%D")
+  except ValueError:
+    print("Invalid date. Use YYY-MM-DD.")
+    continue
+
+
   
 
