@@ -20,3 +20,22 @@ def load_expenses(filename):
     except FileNotFoundError:
         print("No expenses file was found. Starting with an empty list.")
         return []
+# Search my expenses using dates or categories 
+def filter_expenses(expenses, start_date, end_date, category):
+    matching_expenses = []
+
+    for expense in expenses:
+
+    #Get the date and category for each expense
+    expense_date = expense ["date"]
+    expense_category = expense["category"]
+
+    #skip expenses that are not in my chosen category
+    if category and expense_category.lower() !: category.lower():
+        continue
+    #keep expenses that match my search
+    matching_expenses.append(expense)
+return matching_expenses
+
+
+        
