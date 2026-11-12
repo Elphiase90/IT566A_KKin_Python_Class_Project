@@ -43,7 +43,7 @@ def export_csv(filename, expenses):
         writer = csv.writer(file) 
 
     #Add column names to my csv file
-    writer.writerow9["Date", "Category", "Amount", "Description"])
+    writer.writerow(["Date", "Category", "Amount", "Description"])
 
     #Add each expense to the csv file
     for expense in expenses:
