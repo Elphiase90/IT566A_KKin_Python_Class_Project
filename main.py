@@ -25,16 +25,65 @@ while True:
   print("5. Open Another Expense File")
   print("6. Exit")
 
-  choice = input ("Choose an option: ")
+  choice = input("Choose an option: ")
 
-if choice == "1":
-  date = input(Enter date (YYYY-MM-DD): ")
+  if choice == "1":
+    date = input("Enter date (YYYY-MM-DD): ")
+
+    try:
+      datetime.strptime(date, "%Y-%M-%D")
+    except ValueError:
+      print("Invalid date. Use YYY-MM-DD.")
+      continue
+
+    category = input("Enter category: ")
+
+  try: 
+    amount = float(input("Enter amount: "))
+    if amount < 0:
+      print("Amount can't be negative.")
+      continue
+  except ValueError:
+    print("Please enter a valid amount.")
+    continue 
+
+  description = input("Enter description: ")
+
+  expense = {
+    "date": date,
+    "category": category,
+    "amount": amount,
+    "description": description
+  }
+
+  expenses.append(expenses)
+  save_expenses(filename, expenses)
+
+  print("Expenses added and saved!")
+
+elif choice == "2":
+if not expenses:
+    print("No expenses found.")
+  else:
+    for expense in expenses:
+      print(expenses)
+
+elif choice == "3":
+  start = input("Start date (YYY-DD-MM, or Enter to skip): ")
+  end = input("End date (YYYY-MM-DD, or Enter to skip): ")
+  category = input("Category (or Enter to skip): ")
 
   try:
-    datetime.strptime(date, "%Y-%M-%D")
-  except ValueError:
-    print("Invalid date. Use YYY-MM-DD.")
-    continue
+    for date in [start, end]:
+      if date:
+        date.time.strptime(date, "%Y-%m-%d")
+except ValueError:
+  print("Invalid date format.")
+  continue
+
+
+    
+                 
 
 
   
