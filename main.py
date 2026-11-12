@@ -3,7 +3,7 @@
 from datetime import datetime
 from expensetracker import save_expenses, load_expenses, filter_expenses, export_csv
 
-#Choose an expense file
+# Choose an expense file
 filename = input("Enter expense filename (example: expensetracker.json): ")
 
 if not filename:
@@ -33,7 +33,7 @@ while True:
     try:
       datetime.strptime(date, "%Y-%m-%d")
     except ValueError:
-      print("Invalid date. Use YYY-MM-DD.")
+      print("Invalid date. Use YYYY-MM-DD.")
       continue
 
     category = input("Enter category: ")
@@ -58,7 +58,7 @@ while True:
       "description": description
     }
 
-    expenses.append(expenses)
+    expenses.append(expense)
     save_expenses(filename, expenses)
     
     print("Expenses added and saved!")
@@ -71,7 +71,7 @@ while True:
         print(expenses)
 
   elif choice == "3":
-    start = input("Start date (YYY-DD-MM, or Enter to skip): ")
+    start = input("Start date (YYYY-DD-MM, or Enter to skip): ")
     end = input("End date (YYYY-MM-DD, or Enter to skip): ")
     category = input("Category (or Enter to skip): ")
 
@@ -93,7 +93,7 @@ while True:
     if not results:
       print("No matching expenses found.")
     else: 
-      for expenses in results:
+      for expense in results:
         print(expense)
 
   elif choice == "4":
