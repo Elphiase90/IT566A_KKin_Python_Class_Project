@@ -31,7 +31,7 @@ def filter_expenses(expenses, start_date, end_date, category):
         expense_category = expense["category"]
 
         #skip expenses that are not in my chosen category
-        if category and expense_category.lower() !: category.lower():
+        if category and expense_category.lower() != category.lower():
             continue
         #keep expenses that match my search
         matching_expenses.append(expense)
@@ -50,7 +50,7 @@ def export_csv(filename, expenses):
         writer.writerow([
             expenses["date"],
             expenses["category"],
-            expenses["amount"]
+            expenses["amount"],
             expenses["description"]
         ])
 
