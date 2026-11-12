@@ -13,7 +13,7 @@ def save_expenses(filename, expenses):
 #Open my expense file and get the saved information
 def load_expenses(filename):
     try:
-        with open(filename, "r") as file;
+        with open(filename, "r") as file:
             expenses = json.load(file)
             return expenses
 
@@ -48,7 +48,7 @@ def export_csv(filename, expenses):
     #Add each expense to the csv file
     for expense in expenses:
         writer.writerow([
-            expenses["date"),
+            expenses["date"],
             expenses["category"],
             expenses["amount"]
             expenses["description"]
